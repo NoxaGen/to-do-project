@@ -5,19 +5,27 @@
 }
 
 
-/* body {
-    background-image: url(./banner.jpg);
-
-    background-repeat: no-repeat;
-    opacity: 0.5;
+body {
+    background-color: rgb(240, 234, 234);
 
 
-} */
+}
 
 img {
     opacity: 1;
     width: 100%;
     background-color: black;
-    min-width: 960px;
+    min-width: 1916px;
+    position: absolute;
+    top: -5%;
 
+
+}
+
+.todo {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    color: white;
+    font-family: 'Righteous';
 }
