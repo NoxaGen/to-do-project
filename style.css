@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* body {
+    background-image: url(./banner.jpg);
+
+    background-repeat: no-repeat;
+    opacity: 0.5;
+
+
+} */
+
+img {
+    opacity: 1;
+    width: 100%;
+    background-color: black;
+    min-width: 960px;
+
+}
