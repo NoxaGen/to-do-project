@@ -13,11 +13,13 @@ body {
 
 img {
     opacity: 1;
-    width: 100%;
+    /* width: 100%; */
     background-color: black;
-    min-width: 1916px;
+    /* min-width: 1916px; */
     position: absolute;
     top: -5%;
+    left: 50%;
+    transform: translateX(-50%) scale(1.01);
 
 
 }
@@ -30,24 +32,27 @@ img {
     font-family: 'Righteous';
 }
 
-.search {
+.wrapper {
     position: relative;
+    background-color: rgba(255, 0, 0, 0.209);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 200px;
+    top: 220px;
+    height: 700px;
+
+}
+
+.search {
+    position: absolute;
     width: 600px;
     height: 70px;
-    top: 220px;
-    left: 500px;
-    left: 680px;
     min-width: 600px;
     min-height: 70px;
     background-color: white;
-    z-index: 2;
+    z-index: 1;
     border-radius: 5px;
     box-shadow: 3px 3px 5px 2px rgb(38, 38, 38);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-
 }
