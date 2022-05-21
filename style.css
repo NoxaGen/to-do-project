@@ -4,18 +4,12 @@
     padding: 0px;
 }
 
-
 body {
     background-color: rgb(240, 234, 234);
-
-
 }
 
 img {
-    opacity: 1;
-
     background-color: black;
-    /* min-width: 1916px; */
     position: absolute;
     top: -5%;
     left: 50%;
@@ -80,32 +74,18 @@ img {
 }
 
 button {
-
     align-items: center;
     appearance: none;
     background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
     border: 0;
     border-radius: 5px;
     box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    box-sizing: border-box;
     color: #fff;
     cursor: pointer;
     display: inline-flex;
     font-family: 'Righteous', 'Arial';
-
     justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    /* padding-left: 16px;
-    padding-right: 16px; */
     position: absolute;
-
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s, transform .15s;
-    white-space: nowrap;
-    will-change: box-shadow, transform;
     font-size: 18px;
     width: 80px;
     height: 60px;
@@ -113,8 +93,6 @@ button {
     right: 1%;
     transform: translateY(-50%);
 }
-
-
 
 button:hover {
     background-image: radial-gradient(100% 100% at 100% 0, #77bacd 0, #5b5b71 100%);
