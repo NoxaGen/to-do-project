@@ -147,11 +147,14 @@ button:hover {
 .summary div h1 {
     font-family: 'Righteous', 'Arial';
     font-size: 20px;
-    color: #000000;
+    color: #1B649B;
     text-align: center;
     padding: 5px;
     z-index: 2;
     position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .hints div p,
@@ -161,6 +164,11 @@ button:hover {
     text-align: center;
     z-index: 2;
     position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    width: 100%;
 }
 
 .hints div img,
@@ -168,6 +176,6 @@ button:hover {
     transform: scale(1.2);
     position: absolute;
     left: 8%;
-    top: -10%;
+    top: -8%;
     opacity: 1;
 }
