@@ -8,6 +8,8 @@ body {
     background-color: rgb(240, 234, 234);
     overflow: hidden;
     position: relative;
+    height: 100%;
+    transform: translateY(-15%)scale(0.9);
 }
 
 img {
@@ -27,7 +29,7 @@ img {
     top: 25%;
     left: 30%;
     color: white;
-    font-family: 'Righteous';
+    font-family: 'Righteous', 'Arial';
 }
 
 .wrapper {
@@ -160,7 +162,7 @@ button:hover {
 .hints div p,
 .summary div p {
     font-family: 'Righteous', 'Arial';
-    color: #010522;
+    color: #010522d4;
     text-align: center;
     z-index: 2;
     position: absolute;
@@ -178,4 +180,42 @@ button:hover {
     left: 8%;
     top: -8%;
     opacity: 1;
+}
+
+.footer {
+    position: absolute;
+    top: 140%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.footer .icons {
+    display: flex;
+    width: 600px;
+    height: 70px;
+    padding: 10px;
+    /* left: 50%; */
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+}
+
+.footer h2 {
+    font-family: 'Righteous', 'Arial';
+    color: #1b649bc6;
+    font-size: 20px;
+}
+
+.footer .icons {
+    font-size: 40px;
+    text-align: center;
+
+}
+
+.footer .icons p i {
+    color: #1b649bc6;
 }
