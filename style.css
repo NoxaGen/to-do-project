@@ -21,6 +21,7 @@ img {
     overflow: hidden;
     margin: 0px;
     padding: 0px;
+    border-radius: 0.5%;
 
 }
 
@@ -253,8 +254,13 @@ img {
     color: #1b649bc6;
 }
 
+/* .table ul {
+    display: flex;
+    flex-direction: column;
+} */
+
 .activeLi {
-    padding: 15px 70px;
+    padding: 15px 25px;
     border-bottom: solid 2px gray;
     border-radius: 1%;
     text-decoration: none;
@@ -264,4 +270,21 @@ img {
     line-height: 10px;
     text-align: left;
     font-family: 'Righteous', 'Arial';
+    display: flex;
+    justify-content: space-between;
+    color: rgba(16, 15, 15, 0.841)
+}
+
+.taskDone {
+    width: 25px;
+    height: 25px;
+    transform: translateY(-10%);
+    font-size: 15px;
+}
+
+.deleteTask {
+    width: 25px;
+    height: 25px;
+    transform: translateY(-10%);
+    flex-grow: 0;
 }
