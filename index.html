@@ -16,6 +16,9 @@
         <i class="fab fa-facebook-square"></i> facebook button*/
         /* <i class="fas fa-plus-circle"></i> plus icon*/
         /* <i class="fas fa-check-circle"></i> check icon */
+
+        /* Muszę dodać potem icony buttonów przez innerHTML do nowych elementów 
+        na table ? hmm */
     </style>
     <script src="https://kit.fontawesome.com/b421c2a6df.js" crossorigin="anonymous"></script>
     <script src="main.js" defer></script>
@@ -31,12 +34,15 @@
         </div>
         <section class="table">
             <ul>
-                <button></button>
-                <li class="activeLi">posprzątać</li>
-                <button>+</button>
-                <li class=" activeLi">zrobić zakupy</li>
-                <button>+</button>
-                <li class="activeLi">wywiesić pranie</li>
+
+                <li class="activeLi"><button class="taskDone"><i class="fas fa-check-circle"></i></button> posprzątać
+                </li>
+
+                <li class=" activeLi"> <button class="taskDone"><i class="fas fa-check-circle"></i></button> zrobić
+                    zakupy</li>
+
+                <li class="activeLi"> <button class="taskDone"><i class="fas fa-check-circle"></i></button> wywiesić
+                    pranie</li>
             </ul>
         </section>
     </div>
