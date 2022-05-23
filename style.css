@@ -280,6 +280,15 @@ img {
     height: 25px;
     transform: translateY(-10%);
     font-size: 15px;
+    color: white;
+    background-color: #5468ff;
+    border: 1px black solid;
+}
+
+.taskDone:hover {
+    background-color: greenyellow;
+    cursor: pointer;
+
 }
 
 .deleteTask {
@@ -287,4 +296,14 @@ img {
     height: 25px;
     transform: translateY(-10%);
     flex-grow: 0;
+    font-size: 15px;
+    border: 1px black solid;
+    background-color: rgba(206, 41, 74, 0.728);
+    color: white;
+}
+
+.deleteTask:hover {
+    cursor: pointer;
+    background-color: red;
+
 }
