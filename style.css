@@ -74,7 +74,7 @@ img {
     color: #3c4fe08a;
 }
 
-button {
+.add {
     align-items: center;
     appearance: none;
     background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
@@ -95,7 +95,7 @@ button {
     transform: translateY(-50%);
 }
 
-button:hover {
+.add:hover {
     background-image: radial-gradient(100% 100% at 100% 0, #77bacd 0, #5b5b71 100%);
 
 }
