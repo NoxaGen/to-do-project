@@ -314,3 +314,14 @@ img {
     background-color: red;
 
 }
+
+.footer h2 a {
+    text-decoration: none;
+    color: #1b649bc6;
+    transition: 0.5s;
+}
+
+.footer h2 a:hover {
+    color: #8a185e;
+    letter-spacing: 2px;
+}
