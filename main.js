@@ -10,6 +10,9 @@ let tasksDoneCounter = 0;
 const userValue = (e) => {
 
     singleInput = e.target.value;
+    if (singleInput.length >= 25) {
+        return (alert('Zadanie może mieć maksymalnie 25 znaków.'))
+    }
 }
 
 const createTask = (e) => {
@@ -19,6 +22,8 @@ const createTask = (e) => {
     const preTask = document.createElement('li');
     preTask.classList.add('activeLi');
     preTask.textContent = singleInput.toLowerCase();
+
+
     preTask.innerHTML = '<button class="taskDone"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
         '<button class="deleteTask"><i class="fas fa-minus-circle"></i></button>';
     tableUl.appendChild(preTask);
@@ -40,23 +45,7 @@ const createTask = (e) => {
             tasksDoneCounter++;
         })
     })
-
-
-
 }
-
-
-// const taskRemover = (e) => {
-//     e.deleteTask.parentNode.remove();
-// }
-
-// deleteTasks.forEach(delTask => {
-//     delTask.addEventListener('click', function () {
-//         console.log('working')
-//     });
-// });
-
-// addEventListener('click', taskRemover);
 
 userInput.addEventListener('input', userValue);
 
