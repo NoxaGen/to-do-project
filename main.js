@@ -52,7 +52,7 @@ const createTask = (e) => {
             taskDone.parentNode.style.color = "grey";
             taskDone.parentNode.style.backgroundColor = "rgba(172, 255, 47, 0.232)";
             completedTasks.push(taskDone.parentNode); //need this to count completed tasks
-            taskDone.disabled = "disabled";
+            taskDone.disabled = "disabled"; //after one click button stop duplicate push
         })
     })
 }
