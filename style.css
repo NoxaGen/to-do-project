@@ -250,8 +250,15 @@ img {
 
 }
 
+.footer .icons p:hover i {
+    font-size: 55px;
+    color: #8a185e;
+
+}
+
 .footer .icons p i {
     color: #1b649bc6;
+    transition: 0.3s;
 }
 
 /* .table ul {
