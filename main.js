@@ -18,7 +18,9 @@ const userValue = (e) => {
 const createTask = (e) => {
 
     if (!singleInput) {
+        e.preventDefault();
         return (alert("Pole nie może być puste."))
+
     }
 
     e.preventDefault();
