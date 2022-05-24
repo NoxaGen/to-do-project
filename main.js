@@ -17,6 +17,10 @@ const userValue = (e) => {
 
 const createTask = (e) => {
 
+    if (!singleInput) {
+        return (alert("Pole nie może być puste."))
+    }
+
     e.preventDefault();
     taskArr.push(singleInput);
     const preTask = document.createElement('li');
@@ -28,6 +32,7 @@ const createTask = (e) => {
         '<button class="deleteTask"><i class="fas fa-minus-circle"></i></button>';
     tableUl.appendChild(preTask);
     userInput.value = '';
+    singleInput = '';
 
     deleteTasks = [...document.querySelectorAll('.table ul li .deleteTask')];
     deleteTasks.forEach(delTask => {
