@@ -18,7 +18,7 @@ const createTask = (e) => {
     taskArr.push(singleInput);
     const preTask = document.createElement('li');
     preTask.classList.add('activeLi');
-    preTask.textContent = singleInput;
+    preTask.textContent = singleInput.toLowerCase();
     preTask.innerHTML = '<button class="taskDone"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
         '<button class="deleteTask"><i class="fas fa-minus-circle"></i></button>';
     tableUl.appendChild(preTask);
