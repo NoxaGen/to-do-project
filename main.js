@@ -49,23 +49,14 @@ const createTask = (e) => {
     userInput.value = '';
     singleInput = '';
 
-    deleteTasks = [...document.querySelectorAll('.table ul li .deleteTask')];
-    deleteTasks.forEach(delTask => {
-        delTask.addEventListener('click', function () {
-            this.parentNode.remove();
 
-            const index = this.parentNode.dataset.key;
-            taskArr.splice(index, 1);
+    //problem solved - foreach making every element beneath clicked removed too, dynamic query selector fixed it 
+    preTask.querySelector('.deleteTask').addEventListener('click', function () {
+        this.parentNode.remove();
 
-
-
-
-
-
-        });
-
-
-    });
+        const index = this.parentNode.dataset.key;
+        taskArr.splice(index, 1);
+    })
 
     // do poprawy i sprawdzenia dlaczego sie zachowuje w ten sposob
 
