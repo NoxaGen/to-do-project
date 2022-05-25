@@ -2,8 +2,6 @@ let userInput = document.querySelector('input');
 const addButton = document.querySelector('button');
 const tableUl = document.querySelector('.table ul')
 let taskArr = []; //all elements on table will be pushed in this array
-let deleteTasks = []; //arr need for delete button comes from append childs with inner html
-let tasksDone = []; // same as upper array, its for task-done button 
 let completedTasks = []; //all completed tasks will be pushed into this arr
 let singleInput; //need this var for global use, it will store value of e.target
 let testcounter = 0;
