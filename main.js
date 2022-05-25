@@ -58,25 +58,21 @@ const createTask = (e) => {
         taskArr.splice(index, 1);
     })
 
-    // do poprawy i sprawdzenia dlaczego sie zachowuje w ten sposob
+    // NAPRAWIONE hellyeah , to samo co upper foreach powodwal buga
 
-    tasksDone = [...document.querySelectorAll('.table ul li .taskDone')]
-    tasksDone.forEach(taskDone => {
-        taskDone.addEventListener('click', function () {
 
-            taskDone.parentNode.style.textDecoration = "line-through";
-            taskDone.parentNode.style.color = "grey";
-            taskDone.parentNode.style.backgroundColor = "rgba(172, 255, 47, 0.232)";
-            completedTasks.push(taskDone.parentNode); //need this to count completed tasks
-            // completedTasks.push(e.target);
-            taskDone.disabled = "disabled"; //after one click button stop duplicate push
-            // testcounter++;
+    preTask.querySelector('.taskDone').addEventListener('click', function () {
 
-            // upper command doesnt working! still counting from last element...
-            //its working in other way but older elements beneath still adding into array
+        this.parentNode.style.textDecoration = "line-through";
+        this.parentNode.style.color = "grey";
+        this.parentNode.style.backgroundColor = "rgba(172, 255, 47, 0.232)";
+        completedTasks.push(this.parentNode);
+        this.disabled = "disabled";
 
-        })
     })
+
+
+
 }
 
 userInput.addEventListener('input', userValue);
