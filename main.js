@@ -1,10 +1,22 @@
 let userInput = document.querySelector('input');
 const addButton = document.querySelector('button');
 const tableUl = document.querySelector('.table ul')
-let taskArr = []; //all elements on table will be pushed in this array
-let completedTasks = []; //all completed tasks will be pushed into this arr
-let singleInput; //need this var for global use, it will store value of e.target
+let taskArr = [];
+let completedTasks = [];
+let singleInput; //need this var for global use, it will store value of input
 
+
+
+//function get input value and pass it into global var
+const userValue = (e) => {
+
+    singleInput = e.target.value;
+    if (singleInput.length >= 29) {
+        return (alert('Zadanie może mieć maksymalnie 29 znaków.'))
+    }
+}
+
+// function add event on clicked check-button on the todo list
 const completeTask = (e) => {
     e.target.parentNode.style.textDecoration = "line-through";
     e.target.parentNode.style.color = "grey";
@@ -13,13 +25,6 @@ const completeTask = (e) => {
     e.target.disabled = "disabled";
 }
 
-const userValue = (e) => {
-
-    singleInput = e.target.value;
-    if (singleInput.length >= 29) {
-        return (alert('Zadanie może mieć maksymalnie 29 znaków.'))
-    }
-}
 
 const createTask = (e) => {
 
