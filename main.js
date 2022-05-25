@@ -5,12 +5,12 @@ let taskArr = []; //all elements on table will be pushed in this array
 let completedTasks = []; //all completed tasks will be pushed into this arr
 let singleInput; //need this var for global use, it will store value of e.target
 
-const removeTask = () => {
-    this.parentNode.style.textDecoration = "line-through";
-    this.parentNode.style.color = "grey";
-    this.parentNode.style.backgroundColor = "rgba(172, 255, 47, 0.232)";
-    completedTasks.push(this.parentNode);
-    this.disabled = "disabled";
+const completeTask = (e) => {
+    e.target.parentNode.style.textDecoration = "line-through";
+    e.target.parentNode.style.color = "grey";
+    e.target.parentNode.style.backgroundColor = "rgba(172, 255, 47, 0.232)";
+    completedTasks.push(e.target.parentNode);
+    e.target.disabled = "disabled";
 }
 
 const userValue = (e) => {
@@ -49,7 +49,8 @@ const createTask = (e) => {
         taskArr.splice(index, 1);
     })
 
-    preTask.querySelector('.taskDone').addEventListener('click', removeTask);
+    preTask.querySelector('.taskDone').addEventListener('click', completeTask);
+
 
 }
 
