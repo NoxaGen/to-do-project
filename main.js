@@ -4,7 +4,6 @@ const tableUl = document.querySelector('.table ul')
 let taskArr = []; //all elements on table will be pushed in this array
 let completedTasks = []; //all completed tasks will be pushed into this arr
 let singleInput; //need this var for global use, it will store value of e.target
-let testcounter = 0;
 
 const userValue = (e) => {
 
