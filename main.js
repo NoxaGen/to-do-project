@@ -9,7 +9,6 @@ let singleInput; //need this var for global use, it will store value of input
 
 //function get input value and pass it into global var
 const userValue = (e) => {
-
     singleInput = e.target.value;
     if (singleInput.length >= 29) {
         return (alert('Zadanie może mieć maksymalnie 29 znaków.'))
@@ -18,13 +17,19 @@ const userValue = (e) => {
 
 // function add event on clicked check-button on the todo list
 const completeTask = (e) => {
-    e.target.parentNode.style.textDecoration = "line-through";
-    e.target.parentNode.style.color = "grey";
-    e.target.parentNode.style.backgroundColor = "rgba(172, 255, 47, 0.232)";
-    completedTasks.push(e.target.parentNode);
-    e.target.disabled = "disabled";
+    e.currentTarget.parentElement.style.textDecoration = "line-through";
+    e.currentTarget.parentElement.style.color = "grey";
+    e.currentTarget.parentElement.style.backgroundColor = "rgba(172, 255, 47, 0.232)";
+    completedTasks.push(e.currentTarget.parentElement);
+    e.currentTarget.disabled = "disabled";
+    console.log(e.currentTarget)
 }
 
+// const removeTask = (e) => {
+//    e.target.parentNode.remove();
+// const index = e.target.parentNode.dataset.key;
+//         taskArr.splice(index, 1);
+// }
 
 const createTask = (e) => {
 
