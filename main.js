@@ -19,6 +19,7 @@ const completeTask = (e) => {
     e.currentTarget.parentNode.style.backgroundColor = "rgba(172, 255, 47, 0.232)";
     completedTasks.push(e.currentTarget.parentNode);
     e.currentTarget.disabled = "disabled";
+    publishSummary();
 }
 
 const removeTask = (e) => {
@@ -30,9 +31,12 @@ const removeTask = (e) => {
     tasksOnTable.forEach((task, key) => {
         task.dataset = key;
     });
+    publishSummary();
 }
 
 const publishSummary = () => {
+    document.querySelector('[data-summary="all-tasks"]').textContent = ' ' + tasksOnTable.length;
+    document.querySelector('[data-summary="done-tasks"]').textContent = ' ' + completedTasks.length;
 
 }
 
@@ -59,6 +63,7 @@ const createTask = (e) => {
     //li buttons controls
     preTask.querySelector('.deleteTask').addEventListener('click', removeTask);
     preTask.querySelector('.taskDone').addEventListener('click', completeTask);
+    publishSummary();
 }
 
 //controls
