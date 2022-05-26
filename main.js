@@ -19,6 +19,7 @@ const completeTask = (e) => {
     e.currentTarget.parentNode.style.backgroundColor = "rgba(172, 255, 47, 0.232)";
     completedTasks.push(e.currentTarget.parentNode);
     e.currentTarget.disabled = "disabled";
+    e.currentTarget.nextElementSibling.disabled = "disabled";
     publishSummary();
 }
 
@@ -38,7 +39,6 @@ const publishSummary = () => {
     document.querySelector('[data-summary="all-tasks"]').textContent = ' ' + tasksOnTable.length;
     document.querySelector('[data-summary="done-tasks"]').textContent = ' ' + completedTasks.length;
     document.querySelector('[data-summary="tasks-left"]').textContent = ' ' + (tasksOnTable.length - completedTasks.length);
-
 }
 
 const createTask = (e) => {
