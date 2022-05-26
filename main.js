@@ -1,11 +1,14 @@
 const addButton = document.querySelector('button');
 const tableUl = document.querySelector('.table ul');
+let hintsUl = document.querySelector('.hints ul');
 let userInput = document.querySelector('input');
 let tasksOnTable = [];
 let completedTasks = [];
 let baseOfHints = ['wynieść śmieci', 'posprzątać w domu', 'posprzątać w pokoju', 'zrobić trening', 'zrobić zakupy', 'ugotować obiad', 'pomedytować', 'pouczyć się', 'popracować nad projektem', 'jechać do fryzjera', 'jechać do urzędu', 'umówić się do lekarza', 'umówić się do dentysty', 'umówić się do mechanika', 'odebrać pocztę', 'odebrać paczkę', 'zrobić porządek w garażu', 'zrobić porządek w szafie', 'zapłacić rachunki', 'czytać książkę', 'nakarmić kota', 'nakarmić psa', 'dać rybką jeść', 'naprawić kran', 'nasmarować drzwi', 'przygotować posiłki'];
 let singleInput;
 let howManyLeft;
+
+
 
 //functions
 const userValue = (e) => {
@@ -51,8 +54,8 @@ const createTask = (e) => {
     const preTask = document.createElement('li');
     preTask.classList.add('activeLi');
     preTask.textContent = singleInput.toLowerCase();
-    preTask.innerHTML = '<button class="taskDone"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
-        '<button class="deleteTask"><i class="fas fa-minus-circle"></i></button>';
+    preTask.innerHTML = '<button class="taskDone" title="Zadanie wykonane"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
+        '<button class="deleteTask" title="Usuń niepotrzebne zadanie"><i class="fas fa-minus-circle"></i></button>';
     tableUl.appendChild(preTask)
     tasksOnTable.push(preTask);
     tasksOnTable.forEach((task, key) => {
