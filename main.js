@@ -37,6 +37,7 @@ const removeTask = (e) => {
 const publishSummary = () => {
     document.querySelector('[data-summary="all-tasks"]').textContent = ' ' + tasksOnTable.length;
     document.querySelector('[data-summary="done-tasks"]').textContent = ' ' + completedTasks.length;
+    document.querySelector('[data-summary="tasks-left"]').textContent = ' ' + (tasksOnTable.length - completedTasks.length);
 
 }
 
