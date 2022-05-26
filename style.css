@@ -278,10 +278,9 @@ img {
     transition: 0.3s;
 }
 
-/* .table ul {
-    display: flex;
-    flex-direction: column;
-} */
+.hints ul {
+    overflow-y: scroll;
+}
 
 .activeLi {
     padding: 15px 25px;
