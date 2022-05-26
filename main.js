@@ -1,6 +1,7 @@
 const addButton = document.querySelector('button');
 const tableUl = document.querySelector('.table ul');
-const hintsUl = document.querySelectorAll('.hints li');
+const hintsUl = document.querySelector('.hints ul');
+const hintsElements = document.querySelectorAll('.hints ul li')
 let userInput = document.querySelector('input');
 let tasksOnTable = [];
 let completedTasks = [];
@@ -70,3 +71,17 @@ const createTask = (e) => {
 //controls
 userInput.addEventListener('input', userValue);
 addButton.addEventListener('click', createTask);
+
+//test
+
+const searchHint = (e) => {
+    const searchText = e.target.value;
+    let hints = [...hintsElements]
+    hints = hints.filter(li => li.textContent.toLowerCase().includes(searchText));
+
+    hintsUl.textContent = '';
+    hintsUl.textContent = hints.textContent;
+    hints.forEach(hint => hintsUl.appendChild(hint))
+};
+
+userInput.addEventListener('input', searchHint);
