@@ -3,10 +3,10 @@ const tableUl = document.querySelector('.table ul');
 let userInput = document.querySelector('input');
 let tasksOnTable = [];
 let completedTasks = [];
-let singleInput; //need this var for global use, it will store value of input
+let singleInput;
+let howManyLeft;
 
 //functions
-
 const userValue = (e) => {
     singleInput = e.target.value;
     if (singleInput.length >= 29) {
@@ -18,7 +18,7 @@ const completeTask = (e) => {
     e.currentTarget.parentNode.style.color = "grey";
     e.currentTarget.parentNode.style.backgroundColor = "rgba(172, 255, 47, 0.232)";
     completedTasks.push(e.currentTarget.parentNode);
-    e.currentTarget.disabled = "disabled"; //block possibility of multiply clicking same button
+    e.currentTarget.disabled = "disabled";
 }
 
 const removeTask = (e) => {
@@ -30,6 +30,10 @@ const removeTask = (e) => {
     tasksOnTable.forEach((task, key) => {
         task.dataset = key;
     });
+}
+
+const publishSummary = () => {
+
 }
 
 const createTask = (e) => {
@@ -52,6 +56,7 @@ const createTask = (e) => {
     userInput.value = '';
     singleInput = '';
 
+    //li buttons controls
     preTask.querySelector('.deleteTask').addEventListener('click', removeTask);
     preTask.querySelector('.taskDone').addEventListener('click', completeTask);
 }
