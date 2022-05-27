@@ -146,13 +146,23 @@ img {
 }
 
 .hints ul {
+    display: flex;
+    flex-flow: column;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -38%);
     height: 83%;
     width: 100%;
-    /* background-color: rgba(99, 19, 19, 0.429); */
+}
+
+.hints ul li {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 10px;
+    font-family: 'Righteous';
 }
 
 .hints ul::-webkit-scrollbar {
