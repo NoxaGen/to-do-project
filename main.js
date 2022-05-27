@@ -78,7 +78,6 @@ const searchHint = (e) => {
     const searchText = e.target.value;
     let hints = [...hintsElements]
     hints = hints.filter(li => li.textContent.toLowerCase().includes(searchText));
-
     hintsUl.textContent = '';
     hintsUl.textContent = hints.textContent;
     hints.forEach(hint => hintsUl.appendChild(hint))
