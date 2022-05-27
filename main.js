@@ -78,6 +78,7 @@ const createTask = (e) => {
 }
 
 //controls
-userInput.addEventListener('input', userValue);
-userInput.addEventListener('input', searchHint);
-addButton.addEventListener('click', createTask);
+userInput.addEventListener('input', userValue); //get input value and pass it into global var
+userInput.addEventListener('input', searchHint); //every input action searching fitted elements in hints
+addButton.addEventListener('click', createTask); //creating new task in todo-list and pushing it into array
+addButton.addEventListener('click', searchHint); //another call of this functions refresh list in hints after task add
