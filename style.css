@@ -4,8 +4,6 @@
     padding: 0px;
 }
 
-/* I know i know, i should start using SASS and mixins :D Definetly will start using it in my next projects. */
-
 body {
     background-color: rgb(240, 234, 234);
     overflow: hidden;
@@ -24,7 +22,6 @@ img {
     margin: 0px;
     padding: 0px;
     border-radius: 0.5%;
-
 }
 
 .todo {
@@ -100,7 +97,6 @@ img {
 
 .add:hover {
     background-image: radial-gradient(100% 100% at 100% 0, #77bacd 0, #5b5b71 100%);
-
 }
 
 .wrapper .table {
@@ -144,7 +140,6 @@ img {
     z-index: 1;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 1px rgba(38, 38, 38, 0.727);
-
 }
 
 .hints ul {
@@ -175,7 +170,10 @@ img {
     cursor: pointer;
     border: 1px solid black;
     font-weight: bold;
+}
 
+.hints ul li button:hover {
+    background-image: radial-gradient(100% 100% at 100% 0, #77bacd 0, #5b5b71 100%);
 }
 
 .hints ul::-webkit-scrollbar {
@@ -191,7 +189,6 @@ img {
 
 .hints ul::-webkit-scrollbar-thumb {
     background: rgba(71, 23, 231, 0.817);
-
 }
 
 .summary {
@@ -284,14 +281,11 @@ img {
     width: 600px;
     height: 70px;
     padding: 10px;
-    /* left: 50%; */
     position: absolute;
     justify-content: space-around;
     align-items: center;
     left: 50%;
     transform: translateX(-50%);
-
-
 }
 
 .footer h2 {
@@ -307,8 +301,8 @@ img {
 }
 
 .footer .icons p:hover i {
-
-    color: #8a185e;
+    color: #8a185e9f;
+    border-bottom: #8a185e9f solid 5px;
 
 }
 
@@ -350,7 +344,6 @@ img {
 .taskDone:hover {
     background-color: greenyellow;
     cursor: pointer;
-
 }
 
 .deleteTask {
@@ -382,6 +375,5 @@ img {
 }
 
 .footer h2 a:hover {
-    color: #8a185e;
-
+    color: #8a185e9f;
 }
