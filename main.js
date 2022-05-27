@@ -1,17 +1,23 @@
 const addButton = document.querySelector('button');
-const tableUl = document.querySelector('.table ul');
+let tableUl = document.querySelector('.table ul');
 const hintsUl = document.querySelector('.hints ul');
-const hintsElements = document.querySelectorAll('.hints ul li')
+const hintsElements = document.querySelectorAll('.hints ul li');
+const hintsButtons = [...document.querySelectorAll('.hints ul li button')];
 let userInput = document.querySelector('input');
 let tasksOnTable = [];
 let completedTasks = [];
 let singleInput;
 
+
+// ZROBIC TAK ABY INPUT BYL PUSHOWANY DO ARRAYA I Z ARRAYA WYWALAC NA TABLE ALL TASKI?
+// W TEN SPOSOB LATWO BEDZIE PUSHOWAC HINTY DO ARRAYA
+
+
 //functions
 const userValue = (e) => {
     singleInput = e.target.value;
-    if (singleInput.length >= 29) {
-        return (alert('Zadanie może mieć maksymalnie 29 znaków.'))
+    if (singleInput.length >= 30) {
+        return (alert('Zadanie może mieć maksymalnie 30 znaków.'))
     }
 }
 const completeTask = (e) => {
@@ -28,8 +34,6 @@ const removeTask = (e) => {
     e.currentTarget.parentNode.remove();
     const index = e.currentTarget.parentNode.dataset.key;
     tasksOnTable.splice(index, 1);
-    console.log(index)
-    console.log(tasksOnTable)
     tasksOnTable.forEach((task, key) => {
         task.dataset = key;
     });
@@ -62,7 +66,7 @@ const createTask = (e) => {
     preTask.textContent = singleInput.toLowerCase();
     preTask.innerHTML = '<button class="taskDone" title="Zadanie wykonane"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
         '<button class="deleteTask" title="Usuń niepotrzebne zadanie"><i class="fas fa-minus-circle"></i></button>';
-    tableUl.appendChild(preTask)
+    tableUl.appendChild(preTask);
     tasksOnTable.push(preTask);
     tasksOnTable.forEach((task, key) => {
         task.dataset = key;
@@ -77,8 +81,19 @@ const createTask = (e) => {
     publishSummary();
 }
 
+const pushHint = (e) => {
+    e.preventDefault();
+    const clickedLi = e.target.parentNode;
+    tasksOnTable.push(clickedLi);
+    e.target.nextElementSibling.disabled = "disabled";
+
+
+}
+
+
 //controls
 userInput.addEventListener('input', userValue); //get input value and pass it into global var
 userInput.addEventListener('input', searchHint); //every input action searching fitted elements in hints
 addButton.addEventListener('click', createTask); //creating new task in todo-list and pushing it into array
 addButton.addEventListener('click', searchHint); //another call of this functions refresh list in hints after task add
+hintsButtons.forEach(button => button.addEventListener('click', pushHint)); //if user find task he want to add, after click btn it push it to the array and to-do list
