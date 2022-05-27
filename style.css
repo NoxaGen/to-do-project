@@ -4,6 +4,8 @@
     padding: 0px;
 }
 
+/* I know i know, i should start using SASS and mixins :D Definetly will start using it in my next projects. */
+
 body {
     background-color: rgb(240, 234, 234);
     overflow: hidden;
@@ -163,6 +165,17 @@ img {
     width: 100%;
     padding: 5px 10px;
     font-family: 'Righteous';
+    border-bottom: 1px solid #6b6b70ac;
+}
+
+.hints ul li button {
+    width: 17px;
+    height: 17px;
+    background-color: rgba(36, 228, 36, 0.698);
+    cursor: pointer;
+    border: 1px solid black;
+    font-weight: bold;
+
 }
 
 .hints ul::-webkit-scrollbar {
