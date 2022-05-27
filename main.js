@@ -42,6 +42,15 @@ const publishSummary = () => {
     document.querySelector('[data-summary="tasks-left"]').textContent = ' ' + (tasksOnTable.length - completedTasks.length);
 }
 
+const searchHint = (e) => {
+    const searchText = e.target.value;
+    let hints = [...hintsElements]
+    hints = hints.filter(li => li.textContent.toLowerCase().includes(searchText));
+    hintsUl.textContent = '';
+    hintsUl.textContent = hints.textContent;
+    hints.forEach(hint => hintsUl.appendChild(hint))
+};
+
 const createTask = (e) => {
     if (!singleInput) {
         e.preventDefault();
@@ -70,17 +79,5 @@ const createTask = (e) => {
 
 //controls
 userInput.addEventListener('input', userValue);
-addButton.addEventListener('click', createTask);
-
-//test
-
-const searchHint = (e) => {
-    const searchText = e.target.value;
-    let hints = [...hintsElements]
-    hints = hints.filter(li => li.textContent.toLowerCase().includes(searchText));
-    hintsUl.textContent = '';
-    hintsUl.textContent = hints.textContent;
-    hints.forEach(hint => hintsUl.appendChild(hint))
-};
-
 userInput.addEventListener('input', searchHint);
+addButton.addEventListener('click', createTask);
