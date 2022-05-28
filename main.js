@@ -85,6 +85,7 @@ const pushHint = (e) => {
     e.preventDefault();
 
     let preTask = document.createElement('li');
+    e.currentTarget.disabled = "disabled";
     preTask.textContent = e.target.parentElement.firstChild.textContent;
     preTask.innerHTML = '<button class="taskDone" title="Zadanie wykonane"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
         '<button class="deleteTask" title="Usuń niepotrzebne zadanie"><i class="fas fa-minus-circle"></i></button>';
@@ -92,7 +93,9 @@ const pushHint = (e) => {
 
 
 
+
     tasksOnTable.push(preTask);
+
     tasksOnTable.forEach((liElement, key) => {
         tableUl.appendChild(liElement);
         liElement.dataset.key = key;
