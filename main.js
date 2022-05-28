@@ -83,9 +83,27 @@ const createTask = (e) => {
 
 const pushHint = (e) => {
     e.preventDefault();
-    const clickedLi = e.target.parentNode;
-    tasksOnTable.push(clickedLi);
-    e.target.nextElementSibling.disabled = "disabled";
+
+    let preTask = document.createElement('li');
+    preTask.textContent = e.target.parentElement.firstChild.textContent;
+    preTask.innerHTML = '<button class="taskDone" title="Zadanie wykonane"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
+        '<button class="deleteTask" title="Usuń niepotrzebne zadanie"><i class="fas fa-minus-circle"></i></button>';
+    preTask.classList.add('activeLi');
+
+
+
+    tasksOnTable.push(preTask);
+    tasksOnTable.forEach((liElement, key) => {
+        tableUl.appendChild(liElement);
+        liElement.dataset.key = key;
+    });
+
+
+    preTask.querySelector('.deleteTask').addEventListener('click', removeTask);
+    preTask.querySelector('.taskDone').addEventListener('click', completeTask);
+
+
+    publishSummary();
 
 
 }
