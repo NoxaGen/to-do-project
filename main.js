@@ -33,7 +33,6 @@ const removeTask = (e) => {
     tasksOnTable.forEach((task, key) => {
         task.dataset = key;
     });
-
     publishSummary();
 }
 
@@ -72,7 +71,7 @@ const createTask = (e) => {
     userInput.value = '';
     singleInput = '';
 
-    // //li buttons controls
+    //li buttons controls
     preTask.querySelector('.deleteTask').addEventListener('click', removeTask);
     preTask.querySelector('.taskDone').addEventListener('click', completeTask);
     publishSummary();
@@ -81,7 +80,6 @@ const createTask = (e) => {
 const pushHint = (e) => {
     e.preventDefault();
     e.currentTarget.disabled = "disabled";
-
     let preTask = document.createElement('li');
     preTask.textContent = e.target.parentElement.firstChild.textContent;
     preTask.innerHTML = '<button class="taskDone" title="Zadanie wykonane"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
@@ -92,17 +90,11 @@ const pushHint = (e) => {
         tableUl.appendChild(liElement);
         liElement.dataset.key = key;
     });
-
-
+    //li buttons controls
     preTask.querySelector('.deleteTask').addEventListener('click', removeTask);
     preTask.querySelector('.taskDone').addEventListener('click', completeTask);
-
-
     publishSummary();
-
-
 }
-
 
 //controls
 userInput.addEventListener('input', userValue); //get input value and pass it into global var
@@ -110,15 +102,3 @@ userInput.addEventListener('input', searchHint); //every input action searching 
 addButton.addEventListener('click', createTask); //creating new task in todo-list and pushing it into array
 addButton.addEventListener('click', searchHint); //another call of this functions refresh list in hints after task add
 hintsButtons.forEach(button => button.addEventListener('click', pushHint)); //if user find task he want to add, after click btn it push it to the array and to-do list
-
-
-const taskUpgrade = () => {
-    preTask.innerHTML = '<button class="taskDone" title="Zadanie wykonane"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
-        '<button class="deleteTask" title="Usuń niepotrzebne zadanie"><i class="fas fa-minus-circle"></i></button>';
-    preTask.classList.add('activeLi');
-    tasksOnTable.push(preTask);
-    tasksOnTable.forEach((liElement, key) => {
-        tableUl.appendChild(liElement);
-        liElement.dataset.key = key;
-    });
-}
