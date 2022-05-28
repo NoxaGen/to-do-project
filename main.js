@@ -8,11 +8,6 @@ let tasksOnTable = [];
 let completedTasks = [];
 let singleInput;
 
-
-// ZROBIC TAK ABY INPUT BYL PUSHOWANY DO ARRAYA I Z ARRAYA WYWALAC NA TABLE ALL TASKI?
-// W TEN SPOSOB LATWO BEDZIE PUSHOWAC HINTY DO ARRAYA
-
-
 //functions
 const userValue = (e) => {
     singleInput = e.target.value;
@@ -20,6 +15,7 @@ const userValue = (e) => {
         return (alert('Zadanie może mieć maksymalnie 30 znaków.'))
     }
 }
+
 const completeTask = (e) => {
     e.currentTarget.parentNode.style.textDecoration = "line-through";
     e.currentTarget.parentNode.style.color = "grey";
@@ -37,6 +33,7 @@ const removeTask = (e) => {
     tasksOnTable.forEach((task, key) => {
         task.dataset = key;
     });
+
     publishSummary();
 }
 
@@ -83,19 +80,14 @@ const createTask = (e) => {
 
 const pushHint = (e) => {
     e.preventDefault();
+    e.currentTarget.disabled = "disabled";
 
     let preTask = document.createElement('li');
-    e.currentTarget.disabled = "disabled";
     preTask.textContent = e.target.parentElement.firstChild.textContent;
     preTask.innerHTML = '<button class="taskDone" title="Zadanie wykonane"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
         '<button class="deleteTask" title="Usuń niepotrzebne zadanie"><i class="fas fa-minus-circle"></i></button>';
     preTask.classList.add('activeLi');
-
-
-
-
     tasksOnTable.push(preTask);
-
     tasksOnTable.forEach((liElement, key) => {
         tableUl.appendChild(liElement);
         liElement.dataset.key = key;
@@ -118,3 +110,15 @@ userInput.addEventListener('input', searchHint); //every input action searching 
 addButton.addEventListener('click', createTask); //creating new task in todo-list and pushing it into array
 addButton.addEventListener('click', searchHint); //another call of this functions refresh list in hints after task add
 hintsButtons.forEach(button => button.addEventListener('click', pushHint)); //if user find task he want to add, after click btn it push it to the array and to-do list
+
+
+const taskUpgrade = () => {
+    preTask.innerHTML = '<button class="taskDone" title="Zadanie wykonane"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
+        '<button class="deleteTask" title="Usuń niepotrzebne zadanie"><i class="fas fa-minus-circle"></i></button>';
+    preTask.classList.add('activeLi');
+    tasksOnTable.push(preTask);
+    tasksOnTable.forEach((liElement, key) => {
+        tableUl.appendChild(liElement);
+        liElement.dataset.key = key;
+    });
+}
