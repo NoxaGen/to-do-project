@@ -61,21 +61,21 @@ const createTask = (e) => {
         return (alert("Pole nie może być puste."))
     }
     e.preventDefault();
-    const preTask = document.createElement('li');
-    preTask.classList.add('activeLi');
+
+    let preTask = document.createElement('li');
     preTask.textContent = singleInput.toLowerCase();
     preTask.innerHTML = '<button class="taskDone" title="Zadanie wykonane"><i class="fas fa-check-circle"></i></button>' + preTask.textContent +
         '<button class="deleteTask" title="Usuń niepotrzebne zadanie"><i class="fas fa-minus-circle"></i></button>';
-    tableUl.appendChild(preTask);
+    preTask.classList.add('activeLi');
     tasksOnTable.push(preTask);
-    tasksOnTable.forEach((task, key) => {
-        task.dataset = key;
+    tasksOnTable.forEach((liElement, key) => {
+        tableUl.appendChild(liElement);
+        liElement.dataset.key = key;
     });
-
     userInput.value = '';
     singleInput = '';
 
-    //li buttons controls
+    // //li buttons controls
     preTask.querySelector('.deleteTask').addEventListener('click', removeTask);
     preTask.querySelector('.taskDone').addEventListener('click', completeTask);
     publishSummary();
