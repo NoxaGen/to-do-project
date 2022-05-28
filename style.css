@@ -169,7 +169,9 @@ img {
     background-color: rgba(36, 228, 36, 0.698);
     cursor: pointer;
     border: 1px solid black;
-    font-weight: bold;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 6.5px;
 }
 
 .hints ul li button:hover {
