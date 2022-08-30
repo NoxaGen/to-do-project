@@ -35,8 +35,9 @@ about arrays methods, that's why i choose this kind of aplication. The project i
 Technologies:
 _______________
 ![todoOproject Desc](https://user-images.githubusercontent.com/87094041/187405388-c26966e9-cb29-4d41-bb73-a03a13d42b1a.png)
+
 JavaScript, HTML, CSS
 
-Summary:
+Project summary:
 _______________
 I consider the project complete, it taught me some very interesting array functions, and for the first time I had backwardness with passing two arguments in a function while indexing and assigning the 'key' attribute. I use the list myself for everyday work :)
