@@ -29,7 +29,7 @@ about arrays methods, that's why i choose this kind of aplication. The project i
 ![chrome_OeTgZnlnZC](https://user-images.githubusercontent.com/87094041/187407505-a8285810-4d28-42c8-9ac2-3fcafd04cc66.png)
 
 5. One more feature regarding the hint table, if you press the plus button, the selected task will be moved to the main board, the button will be disabled and the task will not be able to be added again. I opted for such a solution instead of checking for duplicates.
-
+![chrome_OXOuhiKHvz](https://user-images.githubusercontent.com/87094041/187414085-4499af54-3ee3-412d-95ee-1f7692d25a8d.png)
 
 Technologies:
 _______________
