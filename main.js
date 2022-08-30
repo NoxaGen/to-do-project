@@ -8,6 +8,7 @@ let tasksOnTable = [];
 let completedTasks = [];
 let singleInput;
 
+
 //functions
 const userValue = (e) => {
     singleInput = e.target.value;
@@ -31,7 +32,7 @@ const removeTask = (e) => {
     const index = e.currentTarget.parentNode.dataset.key;
     tasksOnTable.splice(index, 1);
     tasksOnTable.forEach((task, key) => {
-        task.dataset = key;
+        task.dataset.key = key;
     });
     publishSummary();
 }
